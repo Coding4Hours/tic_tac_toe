@@ -22,12 +22,22 @@ def check_winner(board):
 def update_readme(board, status):
     with open('README.md', 'r') as file:
         content = file.read()
+        celll = lambda cell: '/img/blank.png' if cell is None else '/img/o.png' if cell == 'O' else '/img/x.png' if cell == 'X' else cell
+        
+        ttype = lambda cell: 'X' if cell == 'X' else 'O' if cell == 'O' else 'Empty' if cell is None else cell
 
     board_str = f"""| Tic | Tac | Toe |
 |--|--|--|
-| {board[0]} | {board[1]} | {board[2]} |
-| {board[3]} | {board[4]} | {board[5]} |
-| {board[6]} | {board[7]} | {board[8]} |"""
+| [![{ttype(board[0])}]({celll(board[0])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 0) | 
+[![{ttype(board[1])}]({celll(board[1])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 1) | 
+[![{ttype(board[2])}]({celll(board[2])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 2) |
+| [![{ttype(board[3])}]({celll(board[3])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 3) | 
+[![{ttype(board[4])}]({celll(board[4])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 4) | 
+[![{ttype(board[5])}]({celll(board[5])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 5) |
+| [![{ttype(board[6])}]({celll(board[6])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 6) | 
+[![{ttype(board[7])}]({celll(board[7])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 7) | 
+[![{ttype(board[8])}]({celll(board[8])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 8) |
+"""
 
     new_content = re.sub(r'## Current Board\n\n.*?\n\n', f'## Current Board\n\n{board_str}\n\n', content, flags=re.DOTALL)
     new_content = re.sub(r'## Game Status\n\n.*', f'## Game Status\n\n{status}', new_content)
