@@ -28,15 +28,15 @@ def update_readme(board, status):
 
     board_str = f"""| Tic | Tac | Toe |
 |--|--|--|
-| [![{ttype(board[0])}]({celll(board[0])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 0) | 
-[![{ttype(board[1])}]({celll(board[1])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 1) | 
-[![{ttype(board[2])}]({celll(board[2])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 2) |
-| [![{ttype(board[3])}]({celll(board[3])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 3) | 
-[![{ttype(board[4])}]({celll(board[4])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 4) | 
-[![{ttype(board[5])}]({celll(board[5])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 5) |
-| [![{ttype(board[6])}]({celll(board[6])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 6) | 
-[![{ttype(board[7])}]({celll(board[7])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 7) | 
-[![{ttype(board[8])}]({celll(board[8])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move 8) |
+| [![{ttype(board[0])}]({celll(board[0])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move%200) | 
+[![{ttype(board[1])}]({celll(board[1])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move%201) | 
+[![{ttype(board[2])}]({celll(board[2])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move%202) |
+| [![{ttype(board[3])}]({celll(board[3])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move%203) | 
+[![{ttype(board[4])}]({celll(board[4])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move%204) | 
+[![{ttype(board[5])}]({celll(board[5])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move%205) |
+| [![{ttype(board[6])}]({celll(board[6])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move%206) | 
+[![{ttype(board[7])}]({celll(board[7])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move%207) | 
+[![{ttype(board[8])}]({celll(board[8])})](https://github.com/Coding4Hours/Coding4Hours/issues/new?title=move%208) |
 """
 
     new_content = re.sub(r'## Current Board\n\n.*?\n\n', f'## Current Board\n\n{board_str}\n\n', content, flags=re.DOTALL)
@@ -70,5 +70,5 @@ def main(move):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:
-        move = int(sys.argv[1]) - 1
+        move%20= int(sys.argv[1]) - 1
         main(move)
