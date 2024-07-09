@@ -25,18 +25,18 @@ def update_readme(board, status):
     with open('README.md', 'r') as file:
         content = file.read()
         
-    board = ['&nbsp;' if tile == ' ' else tile for tile in board]
+    global updated_board = ['&nbsp;' if tile == ' ' else tile for tile in board]
 
-    board_str = f"""| {board[0]} | {board[1]} | {board[2]} |
+    board_str = f"""| {updated_board[0]} | {updated_board[1]} | {updated_board[2]} |
 |---|---|---|
-| {board[3]} | {board[4]} | {board[5]} |
-| {board[6]} | {board[7]} | {board[8]} |"""
+| {updated_board[3]} | {updated_board[4]} | {updated_board[5]} |
+| {updated_board[6]} | {updated_board[7]} | {updated_board[8]} |"""
     
     with open('stuff.json', 'r') as file:
         data = json.load(file) 
     board_from_log = data['board']
     for i in range(9):
-        board_from_log[i] = board[i]
+        board_from_log[i] = updated_board[i]
 
     
     possible_moves = [i+1 for i, v in enumerate(board) if v == ' ']
