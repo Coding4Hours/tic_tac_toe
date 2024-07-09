@@ -3,13 +3,13 @@ import sys
 
 def update_board(board, move, player):
     print(f"Attempting to update board with move {move+1} for player {player}")
-    if move < 0 or move >= len(board):
+    if (move + 1) < 0 or move >= len(board):
         print(f"Invalid move: {move+1}. Move must be between 1 and {len(board)}")
         return False
-    if board[move] == 'X' or board[move] == 'O':
+    if board[move+1] == 'X' or board[move+1] == 'O':
         print(f"Invalid move: Square {move+1} is already occupied")
         return False
-    board[move] = player
+    board[move+1] = player
     print(f"Board updated successfully. New board state: {board}")
     return True
 
