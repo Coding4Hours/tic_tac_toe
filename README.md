@@ -4,10 +4,10 @@ Welcome to this automated Tic-Tac-Toe game! To make a move, create an issue with
 
 ## Current Board
 
-| O | O |  |
+|  | O |  |
 |---|---|---|
 | O |  |  |
-|  |  |   |
+|  |  | X |
 
 Possible moves:
 
@@ -30,4 +30,4 @@ Possible moves:
 
 ## Game Status
 
-It's X's turn to play.
+It's O's turn to play.
