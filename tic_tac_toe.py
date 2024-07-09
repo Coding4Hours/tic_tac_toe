@@ -70,5 +70,5 @@ def main(move):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:
-        move%20= int(sys.argv[1]) - 1
+        move = int(sys.argv[1]) - 1
         main(move)
