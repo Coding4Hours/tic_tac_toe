@@ -41,7 +41,7 @@ def update_readme(board, status):
         if board[move] == 'X' or board[move] == 'O':
             pass
         else:
-            issue_title == f"move {move}"
+            issue_title = f"move {move}"
             encoded_title = urllib.parse.quote(issue_title)
             moves_str += f"- [Move {move}](../../issues/new?title={encoded_title})\n"
 
