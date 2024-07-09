@@ -93,7 +93,7 @@ def main(move):
         with open('stuff.json') as file:
             a = json.load(file)
             a['turn'] = 'O' if current_player == 'X' else 'X'
-            file.write(a)
+            file.write(json.stringify(a))
         update_readme(board, status)
         return True
     else:
