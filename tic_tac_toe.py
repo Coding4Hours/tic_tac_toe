@@ -24,6 +24,12 @@ def update_readme(board, status):
     with open('README.md', 'r') as file:
         content = file.read()
 
+    for move in board:
+        if board[move] = "":
+            board[move] = " "
+        if board[move] = None:
+            board[move] = " "
+    
     board_str = f"""| {board[0]} | {board[1]} | {board[2]} |
 |---|---|---|
 | {board[3]} | {board[4]} | {board[5]} |
