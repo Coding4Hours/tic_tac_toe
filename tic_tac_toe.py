@@ -28,7 +28,7 @@ def update_readme(board, status):
     updated_board = ['&nbsp;' if tile == ' ' else tile for tile in board]
 
     #test
-        cell_image = lambda cell: '/img/blank.png' if cell == ' ' else '/img/o.png' if cell == 'O' else '/img/x.png'
+    cell_image = lambda cell: '/img/blank.png' if cell == ' ' else '/img/o.png' if cell == 'O' else '/img/x.png'
     cell_type = lambda cell: 'X' if cell == 'X' else 'O' if cell == 'O' else 'Empty' if cell == ' ' else cell
 
     board_str = f"""| Tic | Tac | Toe |
