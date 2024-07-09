@@ -3,10 +3,8 @@ import re
 #a = {}
 
 def update_board(board, move, player):
-    if board[move] == 'X' or board[move] == 'O':
+    if move not in board or board[move] in ['X', 'O']:
         return False
-    #a[move] = move
-    board[move] = player
     return True
 
 def check_winner(board):
