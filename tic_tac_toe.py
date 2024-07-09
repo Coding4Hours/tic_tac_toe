@@ -94,7 +94,7 @@ def main(move):
             a = json.load(file)
             
         a['turn'] = 'O' if current_player == 'X' else 'X'
-        with open('stuff.json', 'w') as file"
+        with open('stuff.json', 'w') as file:
             file.write(json.dumps(a))
         update_readme(board, status)
         return True
