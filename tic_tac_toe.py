@@ -24,30 +24,6 @@ def update_readme(board, status):
     with open('README.md', 'r') as file:
         content = file.read()
 
-def update_readme(board, status):
-    with open('README.md', 'r') as file:
-        content = file.read()
-
-    board_str = f"""| Tic | Tac | Toe |
-|--|--|--|
-| {board[0]} | {board[1]} | {board[2]} |
-| {board[3]} | {board[4]} | {board[5]} |
-| {board[6]} | {board[7]} | {board[8]} |"""
-
-    possible_moves = [i+1 for i, v in enumerate(board) if v == ' ']
-    moves_str = "Possible moves:\n\n"
-    for move in possible_moves:
-        issue_title = f"move {move}"
-        encoded_title = urllib.parse.quote(issue_title)
-        moves_str += f"- [Move {move}](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title={encoded_title})\n"
-        
-pythonCopyimport re
-import urllib.parse
-
-def update_readme(board, status):
-    with open('README.md', 'r') as file:
-        content = file.read()
-
     board_str = f"""| {board[0]} | {board[1]} | {board[2]} |
 |---|---|---|
 | {board[3]} | {board[4]} | {board[5]} |
