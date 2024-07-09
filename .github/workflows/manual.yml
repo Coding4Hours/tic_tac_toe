@@ -18,6 +18,7 @@ jobs:
 
     - name: Process move
       run: |
+        pip install urllib --break-system-packages
         move=$(echo ${{ github.event.issue.title }} | sed 's/move //')
         python tic_tac_toe.py $move
 
