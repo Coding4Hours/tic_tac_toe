@@ -31,7 +31,14 @@ def update_readme(board, status):
 |---|---|---|
 | {board[3]} | {board[4]} | {board[5]} |
 | {board[6]} | {board[7]} | {board[8]} |"""
+    
+    with open('stuff.json', 'r') as file:
+        data = json.load(file) 
+    board_from_log = data['board']
+    for i in range(9):
+        board_from_log[i] = board[i]
 
+    
     possible_moves = [i+1 for i, v in enumerate(board) if v == ' ']
     moves_str = "Possible moves:\n\n"
     for move in possible_moves:
