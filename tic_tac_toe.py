@@ -23,21 +23,9 @@ def update_readme(board, status):
     with open('README.md', 'r') as file:
         content = file.read()
 
-    cell_image = lambda cell: '/img/blank.png' if cell == ' ' else '/img/o.png' if cell == 'O' else '/img/x.png'
-    cell_type = lambda cell: 'X' if cell == 'X' else 'O' if cell == 'O' else 'Empty' if cell == ' ' else cell
-
-    board_str = f"""| Tic | Tac | Toe |
-|--|--|--|
-| [![{cell_type(board[0])}]({cell_image(board[0])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%201) | 
-[![{cell_type(board[1])}]({cell_image(board[1])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%202) | 
-[![{cell_type(board[2])}]({cell_image(board[2])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%203) |
-| [![{cell_type(board[3])}]({cell_image(board[3])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%204) | 
-[![{cell_type(board[4])}]({cell_image(board[4])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%205) | 
-[![{cell_type(board[5])}]({cell_image(board[5])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%206) |
-| [![{cell_type(board[6])}]({cell_image(board[6])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%207) | 
-[![{cell_type(board[7])}]({cell_image(board[7])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%208) | 
-[![{cell_type(board[8])}]({cell_image(board[8])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%209) |
-"""
+    board_str = '|'.join(board[:3]) + '|\n|---|---|---|\n' + \
+                '|'.join(board[3:6]) + '|\n' + \
+                '|'.join(board[6:]) + '|'
 
     new_content = re.sub(r'## Current Board\n\n.*?\n\n', f'## Current Board\n\n{board_str}\n\n', content, flags=re.DOTALL)
     new_content = re.sub(r'## Game Status\n\n.*', f'## Game Status\n\n{status}', new_content)
