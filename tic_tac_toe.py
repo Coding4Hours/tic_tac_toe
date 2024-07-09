@@ -60,10 +60,13 @@ def main(move):
     board = [item for sublist in board for item in sublist]
 
     current_player = 'X' if content.endswith("It's X's turn to play.") else 'O'
+    
     print(board)
     with open('stuff.json', 'r') as file:
         data = json.load(file) 
-    board = data.board
+    board = data['board']
+    print(board)
+    
     if update_board(board, move, current_player):
         winner = check_winner(board)
         if winner:
