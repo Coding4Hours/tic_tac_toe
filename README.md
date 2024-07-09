@@ -4,9 +4,8 @@ Welcome to this automated Tic-Tac-Toe game! To make a move, create an issue with
 
 ## Current Board
 
-| Tic | Tac | Toe |
-|--|--|--|
-|   |   |   |
+|   | O |   |
+|---|---|---|
 |   | O |   |
 |   |   |   |
 
