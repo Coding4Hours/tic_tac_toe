@@ -24,21 +24,18 @@ def check_winner(board):
 def update_readme(board, status):
     with open('README.md', 'r') as file:
         content = file.read()
+
     updated_board = ['&nbsp;' if tile == ' ' else tile for tile in board]
-    global updated_board
 
     board_str = f"""| {updated_board[0]} | {updated_board[1]} | {updated_board[2]} |
 |---|---|---|
 | {updated_board[3]} | {updated_board[4]} | {updated_board[5]} |
 | {updated_board[6]} | {updated_board[7]} | {updated_board[8]} |"""
-    
-    with open('stuff.json', 'r') as file:
-        data = json.load(file) 
-    board_from_log = data['board']
-    for i in range(9):
-        board_from_log[i] = updated_board[i]
 
-    
+    with open('stuff.json', 'r') as file:
+        data = json.load(file)
+    data['board'] = updated_board  # Update board in data dictionary
+
     possible_moves = [i+1 for i, v in enumerate(board) if v == ' ']
     moves_str = "Possible moves:\n\n"
     for move in possible_moves:
@@ -49,20 +46,12 @@ def update_readme(board, status):
     new_content = re.sub(r'## Current Board\n\n.*?\n\n', f'## Current Board\n\n{board_str}\n\n', content, flags=re.DOTALL)
     new_content = re.sub(r'## Game Status\n\n.*', f'## Game Status\n\n{status}', new_content)
 
-    with open('stuff.json', 'r') as file:
-        data = json.load(file) 
-    board = data['board']
-
-    if board['turn'] == 'X':
-        board['turn'] = 'O'
-    elif board['turn'] == 'O':
-        board['turn'] = 'X'
-    else:
-        print("invalid player")
-    
     with open('README.md', 'w') as file:
         file.write(new_content)
 
+    # If you need to persist the updated board in "stuff.json"
+    with open('stuff.json', 'w') as file:
+        json.dump(data, file)
 def main(move):
     with open('README.md', 'r') as file:
         content = file.read()
