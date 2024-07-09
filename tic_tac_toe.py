@@ -1,7 +1,11 @@
 import re
 
 def update_board(board, move, player):
+    if move < 0 or move >= len(board):
+        print(f"Invalid move: {move+1}. Move must be between 1 and {len(board)}")
+        return False
     if board[move] == 'X' or board[move] == 'O':
+        print(f"Invalid move: Square {move+1} is already occupied")
         return False
     board[move] = player
     return True
