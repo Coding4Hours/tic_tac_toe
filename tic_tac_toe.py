@@ -47,15 +47,17 @@ def main(move):
     with open('README.md', 'r') as file:
         content = file.read()
 
-    board = re.findall(r'\| (.) \| (.) \| (.) \|', content)
-    board = [item for sublist in board for item in sublist]
-
     current_player = 'X' if content.endswith("It's X's turn to play.") else 'O'
     
-    print(board)
     with open('stuff.json', 'r') as file:
         data = json.load(file) 
     board = data['board']
+    for key in board:
+        if board[key] == '':
+            board[key] = ' '
+        if board[key] == None:
+            board[key] = ' '
+        
     print(board)
     
     if update_board(board, move, current_player):
