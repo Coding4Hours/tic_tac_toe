@@ -1,11 +1,11 @@
 import re
 
-a = {}
+#a = {}
 
 def update_board(board, move, player):
     if move not in a or a[move] in ['X', 'O']:
         return False
-    a[move] = board[move]
+    #a[move] = board[move]
     board[move] = player
     return True
 
