@@ -30,4 +30,4 @@ Possible moves:
 
 ## Game Status
 
-It's O's turn to play.
+It's X's turn to play.
