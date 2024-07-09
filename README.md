@@ -6,14 +6,14 @@ Welcome to this automated Tic-Tac-Toe game! To make a move, create an issue with
 
 | Tic | Tac | Toe |
 |--|--|--|
-| [![ ](/img/x.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%201) | 
+| [![asd](/img/x.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%201) | 
 [![O](/img/o.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%202) | 
-[![ ](/img/x.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%203) |
+[![ a](/img/x.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%203) |
 | [![O](/img/o.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%204) | 
-[![ ](/img/x.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%205) | 
+[![ a](/img/x.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%205) | 
 [![X](/img/x.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%206) |
-| [![ ](/img/x.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%207) | 
-[![ ](/img/x.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%208) | 
+| [![ a](/img/x.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%207) | 
+[![ a](/img/x.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%208) | 
 [![X](/img/x.png)](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%209) |
 
 
