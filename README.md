@@ -9,15 +9,6 @@ O| | |
 1|2|3|
 4|5|6|7|8|9|
 
-Welcome to this automated Tic-Tac-Toe game! To make a move, create an issue with the title "move {square number}".
-
-## Current Board
-
-O| | |
-|---|---|---|
-1|2|3|
-4|5|6|7|8|9|
-
 ## How to Play
 
 1. To make a move, create a new issue with the title "move {square number}" (e.g., "move 5" to place your mark in the center).
