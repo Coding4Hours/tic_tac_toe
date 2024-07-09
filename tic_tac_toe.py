@@ -23,9 +23,9 @@ def update_readme(board, status):
     with open('README.md', 'r') as file:
         content = file.read()
 
-    board_str = '|'.join(board[:3]) + '|\n|---|---|---|\n' + \
-                '|'.join(board[3:6]) + '|\n' + \
-                '|'.join(board[6:]) + '|'
+    board_str = '| '.join(board[:3]) + ' |\n|---|---|---|\n' + \
+                '| '.join(board[3:6]) + ' |\n' + \
+                '| '.join(board[6:]) + ' |'
 
     new_content = re.sub(r'## Current Board\n\n.*?\n\n', f'## Current Board\n\n{board_str}\n\n', content, flags=re.DOTALL)
     new_content = re.sub(r'## Game Status\n\n.*', f'## Game Status\n\n{status}', new_content)
