@@ -22,7 +22,7 @@ def check_winner(board):
         return 'Tie'
     return None
 
-def update_readme(board, status)
+def update_readme(board, status):
     with open('README.md', 'r') as file:
         content = file.read()
         celll = lambda cell: '/img/blank.png' if cell is None else '/img/o.png' if cell == 'O' else '/img/x.png' if cell == 'X' else cell
