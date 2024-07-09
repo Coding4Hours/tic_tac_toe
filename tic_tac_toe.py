@@ -38,9 +38,12 @@ def update_readme(board, status):
     possible_moves = [i+1 for i, v in enumerate(board) if v == ' ']
     moves_str = "Possible moves:\n\n"
     for move in possible_moves:
-        issue_title = f"move {move}"
-        encoded_title = urllib.parse.quote(issue_title)
-        moves_str += f"- [Move {move}](../../issues/new?title={encoded_title})\n"
+        if board[move] == 'X' or board[move] == 'O':
+            pass
+        else:
+            issue_title = f"move {move}"
+            encoded_title = urllib.parse.quote(issue_title)
+            moves_str += f"- [Move {move}](../../issues/new?title={encoded_title})\n"
 
     new_content = re.sub(r'## Current Board\n\n.*?\n\n', f'## Current Board\n\n{board_str}\n\n', content, flags=re.DOTALL)
     new_content = re.sub(r'## Game Status\n\n.*', f'## Game Status\n\n{status}', new_content)
