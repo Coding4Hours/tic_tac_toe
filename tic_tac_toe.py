@@ -33,15 +33,9 @@ def update_readme(board, status):
 
     board_str = f"""| Tic | Tac | Toe |
 |--|--|--|
-| [![{cell_type(updated_board[0])}]({cell_image(updated_board[0])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%201) | 
-[![{cell_type(updated_board[1])}]({cell_image(updated_board[1])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%202) | 
-[![{cell_type(updated_board[2])}]({cell_image(updated_board[2])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%203) |
-| [![{cell_type(updated_board[3])}]({cell_image(updated_board[3])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%204) | 
-[![{cell_type(updated_board[4])}]({cell_image(updated_board[4])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%205) | 
-[![{cell_type(updated_board[5])}]({cell_image(updated_board[5])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%206) |
-| [![{cell_type(updated_board[6])}]({cell_image(updated_board[6])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%207) | 
-[![{cell_type(updated_board[7])}]({cell_image(updated_board[7])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%208) | 
-[![{cell_type(updated_board[8])}]({cell_image(updated_board[8])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%209) |
+| [![{cell_type(updated_board[0])}]({cell_image(updated_board[0])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%201) | [![{cell_type(updated_board[1])}]({cell_image(updated_board[1])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%202) | [![{cell_type(updated_board[2])}]({cell_image(updated_board[2])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%203) | 
+| [![{cell_type(updated_board[3])}]({cell_image(updated_board[3])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%204) | [![{cell_type(updated_board[4])}]({cell_image(updated_board[4])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%205) | [![{cell_type(updated_board[5])}]({cell_image(updated_board[5])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%206) | 
+| [![{cell_type(updated_board[6])}]({cell_image(updated_board[6])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%207) |[![{cell_type(updated_board[7])}]({cell_image(updated_board[7])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%208) | [![{cell_type(updated_board[8])}]({cell_image(updated_board[8])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%209) | 
 """
 
    # board_str = f"""| {updated_board[0]} | {updated_board[1]} | {updated_board[2]} |
