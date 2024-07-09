@@ -39,7 +39,7 @@ def update_readme(board, status):
     for move in possible_moves:
         issue_title = f"move {move}"
         encoded_title = urllib.parse.quote(issue_title)
-        moves_str += f"- [Move {move}](../../issues/new?title={encoded_title})\n"
+        moves_str += f"- [Move {move}](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title={encoded_title})\n"
         
 pythonCopyimport re
 import urllib.parse
