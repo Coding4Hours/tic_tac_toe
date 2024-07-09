@@ -4,10 +4,10 @@ Welcome to this automated Tic-Tac-Toe game! To make a move, create an issue with
 
 ## Current Board
 
-|   | O |   |
+| O | O |  |
 |---|---|---|
-|   | O |   |
-|   |   |   |
+| O |  |  |
+|  |  |  |
 
 Possible moves:
 
