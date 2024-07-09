@@ -3,7 +3,7 @@ import re
 a = {}
 
 def update_board(board, move, player):
-    if board[move] == 'X' or board[move] == 'O':
+    if move not in a or a[move] in ['X', 'O']:
         return False
     a[move] = board[move]
     board[move] = player
@@ -55,10 +55,14 @@ def main(move):
     board = re.findall(r'\| (.) \| (.) \| (.) \|', content)
     board = [item for sublist in board for item in sublist]
 
+    # Initialize the 'a' dictionary with the current board state
+    global a
+    a = {i: cell if cell != ' ' else None for i, cell in enumerate(board)}
+
     current_player = 'X' if content.endswith("It's X's turn to play.") else 'O'
 
     if update_board(board, move, current_player):
-        winner = check_winner(board)
+        winner = check_winner([a.get(i, ' ') for i in range(9)])
         if winner:
             status = f'{winner} wins!' if winner != 'Tie' else "It's a tie!"
         else:
