@@ -1,8 +1,11 @@
 import re
 
+a = {}
+
 def update_board(board, move, player):
     if board[move] == 'X' or board[move] == 'O':
         return False
+    a[move] = board[move]
     board[move] = player
     return True
 
@@ -28,15 +31,15 @@ def update_readme(board, status):
 
     board_str = f"""| Tic | Tac | Toe |
 |--|--|--|
-| [![{ttype(board[0])}]({celll(board[0])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%200) | 
-[![{ttype(board[1])}]({celll(board[1])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%201) | 
-[![{ttype(board[2])}]({celll(board[2])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%202) |
-| [![{ttype(board[3])}]({celll(board[3])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%203) | 
-[![{ttype(board[4])}]({celll(board[4])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%204) | 
-[![{ttype(board[5])}]({celll(board[5])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%205) |
-| [![{ttype(board[6])}]({celll(board[6])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%206) | 
-[![{ttype(board[7])}]({celll(board[7])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%207) | 
-[![{ttype(board[8])}]({celll(board[8])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%208) |
+| [![{ttype(a[0])}]({celll(a[0])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%200) | 
+[![{ttype(a[1])}]({celll(a[1])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%201) | 
+[![{ttype(a[2])}]({celll(a[2])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%202) |
+| [![{ttype(a[3])}]({celll(a[3])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%203) | 
+[![{ttype(a[4])}]({celll(a[4])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%204) | 
+[![{ttype(a[5])}]({celll(a[5])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%205) |
+| [![{ttype(a[6])}]({celll(a[6])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%206) | 
+[![{ttype(a[7])}]({celll(a[7])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%207) | 
+[![{ttype(a[8])}]({celll(a[8])})](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title=move%208) |
 """
 
     new_content = re.sub(r'## Current Board\n\n.*?\n\n', f'## Current Board\n\n{board_str}\n\n', content, flags=re.DOTALL)
