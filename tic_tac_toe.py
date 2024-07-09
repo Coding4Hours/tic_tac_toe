@@ -44,7 +44,7 @@ def update_readme(board, status):
         else:
             issue_title = f"move {move}"
             encoded_title = urllib.parse.quote(issue_title)
-            moves_str += f"- [Move {move}](../../issues/new?title={encoded_title})\n"
+            moves_str += f"- [Move {move}](https://github.com/Coding4Hours/tic_tac_toe/issues/new?title={encoded_title})\n"
 
     new_content = re.sub(r'## Current Board\n\n.*?\n\n', f'## Current Board\n\n{board_str}\n\n', content, flags=re.DOTALL)
     new_content = re.sub(r'## Game Status\n\n.*', f'## Game Status\n\n{status}', new_content)
@@ -61,7 +61,7 @@ def main(move):
 
     current_player = 'X' if content.endswith("It's X's turn to play.") else 'O'
     print(board)
-    board = json.loads('stuff.json')[0].board
+    board = json.loads('stuff.json').board
     if update_board(board, move, current_player):
         winner = check_winner(board)
         if winner:
