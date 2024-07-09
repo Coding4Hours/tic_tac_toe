@@ -42,6 +42,17 @@ def update_readme(board, status):
     new_content = re.sub(r'## Current Board\n\n.*?\n\n', f'## Current Board\n\n{board_str}\n\n', content, flags=re.DOTALL)
     new_content = re.sub(r'## Game Status\n\n.*', f'## Game Status\n\n{status}', new_content)
 
+    with open('stuff.json', 'r') as file:
+        data = json.load(file) 
+    board = data['board']
+
+    if board['turn'] == 'X':
+        board['turn'] = 'O'
+    elif board['turn'] == 'O':
+        board['turn'] = 'X'
+    else:
+        print("invalid player")
+    
     with open('README.md', 'w') as file:
         file.write(new_content)
 
@@ -49,7 +60,7 @@ def main(move):
     with open('README.md', 'r') as file:
         content = file.read()
 
-    current_player = 'X' if content.endswith("It's X's turn to play.") else 'O'
+    current_player = board['turn']
     
     with open('stuff.json', 'r') as file:
         data = json.load(file) 
