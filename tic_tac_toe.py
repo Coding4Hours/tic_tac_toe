@@ -24,8 +24,8 @@ def check_winner(board):
 def update_readme(board, status):
     with open('README.md', 'r') as file:
         content = file.read()
-        
-    global updated_board = ['&nbsp;' if tile == ' ' else tile for tile in board]
+    updated_board = ['&nbsp;' if tile == ' ' else tile for tile in board]
+    global updated_board
 
     board_str = f"""| {updated_board[0]} | {updated_board[1]} | {updated_board[2]} |
 |---|---|---|
