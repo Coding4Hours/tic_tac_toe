@@ -61,7 +61,7 @@ def main(move):
 
     current_player = 'X' if content.endswith("It's X's turn to play.") else 'O'
     print(board)
-    board = json.load('stuff.json').board
+    board = json.loads('stuff.json').board
     if update_board(board, move, current_player):
         winner = check_winner(board)
         if winner:
