@@ -56,16 +56,14 @@ def update_readme(board, status):
 def main(move):
     with open('README.md', 'r') as file:
         content = file.read()
-        
-    board = re.findall(r'\| (.) \| (.) \| (.) \|', content)
-    board = [item for sublist in board for item in sublist]
-    
-    current_player = board['turn']
+            
     
     with open('stuff.json', 'r') as file:
         data = json.load(file) 
     board = data['board']
-        
+    
+    current_player = data['turn']
+
     print(board)
     
     if update_board(board, move, current_player):
