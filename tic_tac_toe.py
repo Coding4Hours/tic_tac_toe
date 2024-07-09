@@ -24,6 +24,8 @@ def check_winner(board):
 def update_readme(board, status):
     with open('README.md', 'r') as file:
         content = file.read()
+        
+    board = ['&nbsp;' if tile == ' ' else tile for tile in board]
 
     board_str = f"""| {board[0]} | {board[1]} | {board[2]} |
 |---|---|---|
@@ -52,11 +54,6 @@ def main(move):
     with open('stuff.json', 'r') as file:
         data = json.load(file) 
     board = data['board']
-    for key in board:
-        if board[key] == '':
-            board[key] = ' '
-        if board[key] == None:
-            board[key] = ' '
         
     print(board)
     
