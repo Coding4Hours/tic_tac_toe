@@ -7,7 +7,7 @@ Welcome to this automated Tic-Tac-Toe game! To make a move, create an issue with
 | O | O |  |
 |---|---|---|
 | O |  |  |
-|  |  |  |
+|  |  |   |
 
 Possible moves:
 
