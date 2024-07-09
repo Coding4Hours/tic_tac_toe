@@ -90,7 +90,10 @@ def main(move):
         else:
             next_player = 'O' if current_player == 'X' else 'X'
             status = f"It's {next_player}'s turn to play."
-        
+        with open('stuff.json') as file:
+            a = json.load(file)
+            a['turn'] = 'O' if current_player == 'X' else 'X'
+            file.write(a)
         update_readme(board, status)
         return True
     else:
