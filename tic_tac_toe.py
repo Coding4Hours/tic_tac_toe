@@ -1,6 +1,8 @@
 import re
+import sys
 
 def update_board(board, move, player):
+    print(f"Attempting to update board with move {move+1} for player {player}")
     if move < 0 or move >= len(board):
         print(f"Invalid move: {move+1}. Move must be between 1 and {len(board)}")
         return False
@@ -8,6 +10,7 @@ def update_board(board, move, player):
         print(f"Invalid move: Square {move+1} is already occupied")
         return False
     board[move] = player
+    print(f"Board updated successfully. New board state: {board}")
     return True
 
 def check_winner(board):
@@ -22,8 +25,11 @@ def check_winner(board):
     if ' ' not in board:
         return 'Tie'
     return None
+    pass
 
 def update_readme(board, status):
+    print(f"Updating README with new board state: {board}")
+    print(f"New status: {status}")
     with open('README.md', 'r') as file:
         content = file.read()
         
@@ -48,16 +54,29 @@ def update_readme(board, status):
 
     with open('README.md', 'w') as file:
         file.write(new_content)
+    print("README updated successfully")
 
 def main(move):
+    print(f"Main function called with move: {move}")
+    
     with open('README.md', 'r') as file:
         content = file.read()
 
     board = re.findall(r'\| (.) \| (.) \| (.) \|', content)
     board = [item for sublist in board for item in sublist]
     board = [' ' if cell == 'Empty' else cell for cell in board]
+    print(f"Current board state: {board}")
 
     current_player = 'X' if content.endswith("It's X's turn to play.") else 'O'
+    print(f"Current player: {current_player}")
+
+    try:
+        move = int(move) - 1  # Convert to 0-based index
+        if move < 0 or move >= len(board):
+            raise ValueError
+    except ValueError:
+        print(f"Invalid move: '{move+1}' is not a valid move")
+        return False
 
     if update_board(board, move, current_player):
         winner = check_winner(board)
@@ -68,12 +87,16 @@ def main(move):
             status = f"It's {next_player}'s turn to play."
         
         update_readme(board, status)
+        print("Game updated successfully")
         return True
-    else:
-        return False
+    print("Failed to update the game")
+    return False
 
 if __name__ == "__main__":
-    import sys
     if len(sys.argv) > 1:
-        move = int(sys.argv[1]) - 1
-        main(move)
+        move = sys.argv[1]
+        print(f"Script called with argument: {move}")
+        result = main(move)
+        print(f"Main function returned: {result}")
+    else:
+        print("No move provided")
