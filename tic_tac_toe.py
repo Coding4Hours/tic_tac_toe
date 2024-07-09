@@ -52,10 +52,14 @@ def update_readme(board, status):
     # If you need to persist the updated board in "stuff.json"
     with open('stuff.json', 'w') as file:
         json.dump(data, file)
+    
 def main(move):
     with open('README.md', 'r') as file:
         content = file.read()
-
+        
+    board = re.findall(r'\| (.) \| (.) \| (.) \|', content)
+    board = [item for sublist in board for item in sublist]
+    
     current_player = board['turn']
     
     with open('stuff.json', 'r') as file:
