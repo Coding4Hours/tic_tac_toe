@@ -4,17 +4,19 @@ Welcome to this automated Tic-Tac-Toe game! To make a move, create an issue with
 
 ## Current Board
 
-# GitHub Actions Tic-Tac-Toe
+O| | |
+|---|---|---|
+1|2|3|
+4|5|6|7|8|9|
 
 Welcome to this automated Tic-Tac-Toe game! To make a move, create an issue with the title "move {square number}".
 
 ## Current Board
 
-|   |   |   |
+O| | |
 |---|---|---|
-| 1 | 2 | 3 |
-| 4 | 5 | 6 |
-| 7 | 8 | 9 |
+1|2|3|
+4|5|6|7|8|9|
 
 ## How to Play
 
@@ -33,4 +35,4 @@ It's X's turn to play.
 
 ## Game Status
 
-It's blank's turn to play.
+It's X's turn to play.
