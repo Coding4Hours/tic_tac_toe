@@ -1,5 +1,6 @@
 import re
 import urllib.parse
+import json
 
 def update_board(board, move, player):
     if board[move] == 'X' or board[move] == 'O':
@@ -59,7 +60,8 @@ def main(move):
     board = [item for sublist in board for item in sublist]
 
     current_player = 'X' if content.endswith("It's X's turn to play.") else 'O'
-
+    print(board)
+    board = json.load('stuff.json').board
     if update_board(board, move, current_player):
         winner = check_winner(board)
         if winner:
